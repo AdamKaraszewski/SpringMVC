@@ -1,4 +1,4 @@
-# SpringMVC - xml configuration
+# SpringMVC - startup xml configuration
 Spring MVC projects for educational purposes.
 
 This project presents a simple web application, which is build using spring MVC and xml configuration.
@@ -57,6 +57,23 @@ we need following dependency:
 
 This dependency is marked as provided, because servlet container (tomcat 11 provides jakarta.servlet 6.1 - from tomcat 
 documentation).
+
+### 4. JSTL - Jakarta Standard Tag Library 
+JSTL (Jakarta Standard Tag Library) provides a set of jsp tags (e.g. `c:for, c:if`).
+
+```xml
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.2</version>
+</dependency>
+
+<dependency>
+    <groupId>org.glassfish.web</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+    <version>3.0.1</version>
+</dependency>
+```
 
 ## web.xml file configuration
 
@@ -134,7 +151,7 @@ In my developer environment I have two tomcat folders:
 $CATALINA_BASE\bin> .\startup.bat
 ```
 
-It sets CATLINA_BASE environment variable and runs CATALINA_BASE\bin\startup.bat
+It sets CATALINA_BASE environment variable and runs CATALINA_BASE\bin\startup.bat
 
 ## Build and deploy project on developer environment
 
@@ -146,7 +163,7 @@ mvn clean install
 
 After successful build new folder 'target' should appear. This folder contains war archive: SpringMVC.war
 
-To deploy app you should copy SpringMVC.war into $CATLINA_BASE\webapps folder. Tomcat should automatically detect
+To deploy app you should copy SpringMVC.war into $CATALINA_BASE\webapps folder. Tomcat should automatically detect
 deployed app.
 
 In browser type:
@@ -154,5 +171,8 @@ In browser type:
 ```text
 http://localhost:8080/SpringMVC/
 ```
+
+# Domain model
+
 
 
